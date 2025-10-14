@@ -1,15 +1,32 @@
-# def double(x):
-#     return x*2
+#map 
+def cube(x):
+  return x * x * x
 
 
-def appl(fx,value):
-    return 6+fx(value)
+print(cube(2))
 
-double=lambda x:x*2
-cube=lambda x:x*x*x
-average=lambda x,y:(x+y)/2
+l = [1, 2, 4, 6, 4, 3]
+newl = []
+for item in l:
+  newl.append(cube(item))
 
-print(double(5))
-print(cube(5))
-print(average(3,5))
-print(appl(lambda x:x*x*x,2))
+newl = list(map(lambda x: x*x*x, l))
+print(newl)
+
+#filter
+def filter_function(a):
+  return a>2
+  
+newnewl = list(filter(filter_function, l))
+print(newnewl)
+
+from functools import reduce
+
+numbers = [1, 2, 3, 4, 5] 
+
+def mysum(x, y):
+  return x + y
+  
+sum = reduce(mysum, numbers)
+
+print(sum)
